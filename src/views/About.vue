@@ -14,6 +14,7 @@
 
 <script>
 export default {
+  name: "About",
   methods: {
     goList() {
       this.$router.push({
@@ -27,7 +28,8 @@ export default {
     },
   },
   mounted() {
-    console.log(this.$route.params);
+    console.log("about params data", this.$route.params);
+    console.log("about params data", this.$route);
   },
   beforeRouteEnter(to, from, next) {
     console.log(to);
