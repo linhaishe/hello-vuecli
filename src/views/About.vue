@@ -3,6 +3,12 @@
     <h1>This is an about page</h1>
     <button @click="goList">去list</button>
     <button @click="refresh">refresh</button>
+    <p>
+      <router-link to="/about/foo">/user/foo</router-link> |
+      <router-link to="/about/foo/profile">/user/foo/profile</router-link> |
+      <router-link to="/about/foo/posts">/user/foo/posts</router-link>
+    </p>
+    <router-view></router-view>
   </div>
 </template>
 
