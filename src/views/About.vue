@@ -12,6 +12,7 @@
     <p>storeShowwithComputed : {{ storeShowB }}</p>
     <button @click="add">addMutations</button>
     <button @click="addAsync">addAsync</button>
+    <button @click="axiosFun()">axios</button>
     <p>multiplication getters : {{ multiplication }}</p>
 
     <router-view></router-view>
@@ -42,6 +43,16 @@ export default {
     },
     addAsync() {
       this.$store.dispatch("asyncIncrement");
+    },
+    axiosFun() {
+      this.$axios({
+        url: "/",
+        method: "get",
+        data: {
+          username: "heather",
+          password: 123,
+        },
+      }).then((res) => console.log(res.config.data));
     },
   },
   mounted() {
