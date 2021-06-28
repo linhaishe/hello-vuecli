@@ -12,8 +12,13 @@
     <p>storeShowwithComputed : {{ storeShowB }}</p>
     <button @click="add">addMutations</button>
     <button @click="addAsync">addAsync</button>
-    <button @click="axiosFun()">axios</button>
     <p>multiplication getters : {{ multiplication }}</p>
+
+    <br />
+    <br />
+    <br />
+    <button @click="axiosGet">axiosGet</button>
+    <button @click="axiosPost">axiosPost</button>
 
     <router-view></router-view>
   </div>
@@ -44,15 +49,28 @@ export default {
     addAsync() {
       this.$store.dispatch("asyncIncrement");
     },
-    axiosFun() {
+    axiosGet() {
+      //单个接口使用时候，不用使用/api加在前面
       this.$axios({
-        url: "/",
-        method: "get",
-        data: {
-          username: "heather",
-          password: 123,
+        url: "/login/getuser",
+        params: {
+          username: "aaa",
+          password: "111",
         },
-      }).then((res) => console.log(res.config.data));
+      }).then((res) => console.log(res));
+    },
+    axiosPost() {
+      //单个接口使用时候，不用使用/api加在前面
+      this.$axios({
+        url: "/admin/addadmin",
+        method: "post",
+        data: {
+          name: "aaa5",
+          password: "1112",
+          type: 1,
+          userId: 953,
+        },
+      }).then((res) => console.log(res));
     },
   },
   mounted() {
