@@ -4,7 +4,8 @@ module.exports = {
   devServer: {
     //http adress
     //改了配置文件一定要重启
-    proxy: "http://172.17.7.249:3000",
+    proxy: "http://192.168.0.100:3000",
+    // proxy: "http://172.17.7.249:3000",
   },
 
   //多个代理

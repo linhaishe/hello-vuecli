@@ -52,25 +52,24 @@ export default {
     axiosGet() {
       //单个接口使用时候，不用使用/api加在前面
       this.$axios({
-        url: "/login/getuser",
+        url: "/login",
+        method: "get",
         params: {
           username: "aaa",
-          password: "111",
+          password: 111,
         },
-      }).then((res) => console.log(res));
+      }).then((res) => console.log("resres", res.data));
     },
     axiosPost() {
       //单个接口使用时候，不用使用/api加在前面
       this.$axios({
-        url: "/admin/addadmin",
+        url: "/signUp",
         method: "post",
         data: {
-          name: "aaa5",
-          password: "1112",
-          type: 1,
-          userId: 953,
+          username: "aaa",
+          password: 111,
         },
-      }).then((res) => console.log(res));
+      }).then((res) => console.log(res.config.data));
     },
   },
   mounted() {
