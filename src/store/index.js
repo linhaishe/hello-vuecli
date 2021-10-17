@@ -7,6 +7,12 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
   state: {
+    //定义按钮权限
+    buttonPermission: {
+      add: true,
+      edit: false,
+      delete: false,
+    },
     count: 88,
   },
   //类似于computed，计算state的计算属性
