@@ -1,7 +1,7 @@
-import Vue from "vue";
-import Vuex from "vuex";
-import moduleA from "./moduleA";
-import moduleB from "./moduleB";
+import Vue from 'vue';
+import Vuex from 'vuex';
+import moduleA from './moduleA';
+import moduleB from './moduleB';
 
 Vue.use(Vuex);
 
@@ -32,7 +32,7 @@ const store = new Vuex.Store({
     //context是vuex对象的实例，相当于this.$store
     asyncIncrement(context) {
       setTimeout(() => {
-        context.commit("increment");
+        context.commit('increment');
       }, 2000);
     },
   },
