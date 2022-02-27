@@ -90,22 +90,22 @@ export default {
       });
       doc.save('tableDatafromServe.pdf');
     },
-    getTableData() {
-      this.$axios({
-        url: '/getTableData',
-        method: 'post',
-        data: {
-          pwd: '1',
-        },
-      }).then((res) => {
-        this.tableDatafromServe = res.data.data;
-        console.log(res.data.data);
+    // getTableData() {
+    //   this.$axios({
+    //     url: '/getTableData',
+    //     method: 'post',
+    //     data: {
+    //       pwd: '1',
+    //     },
+    //   }).then((res) => {
+    //     this.tableDatafromServe = res.data.data;
+    //     console.log(res.data.data);
 
-        return res.data.data;
-        //总页面数据修改
-        // this.page_total = res.data.count;
-      });
-    },
+    //     return res.data.data;
+    //     //总页面数据修改
+    //     // this.page_total = res.data.count;
+    //   });
+    // },
   },
 };
 </script>
